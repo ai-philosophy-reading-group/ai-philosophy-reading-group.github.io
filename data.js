@@ -7,7 +7,7 @@ window.GROUP = {
   discussion: { repo: '', repoId: '', category: '', categoryId: '' },
   semesters: [{
     id: 'fall-2026', label: 'Fall 2026', theme: 'Interpretability & AI Safety',
-    scheduleNote: 'Future meetings begin at 1:00 PM– Eastern Time. We will decide the usual end time and future schedule at our first meeting.',
+    scheduleNote: 'Future meetings: 1:00 PM–TBD ET. We will decide the usual end time and future schedule at our first meeting.',
     meetings: [{
       date: '2026-10-10', start: '13:00', end: '14:00', first: true,
       topic: 'Why Interpretability?',
@@ -36,7 +36,8 @@ window.GROUP = {
       {topic: 'Adversarial attacks and AI safety', papers: [
         {title: 'Universal and Transferable Adversarial Attacks on Aligned Language Models', url: 'https://arxiv.org/abs/2307.15043'}]},
       {topic: 'Constitutional classifiers', papers: [
-        {title: 'Constitutional Classifiers', url: 'https://arxiv.org/abs/2601.04603', related: [{title: 'Associated paper', url: 'https://arxiv.org/abs/2501.18837'}]}]},
+        {title: 'Constitutional Classifiers++: Efficient Production-Grade Defenses against Universal Jailbreaks', url: 'https://arxiv.org/abs/2601.04603'},
+        {title: 'Constitutional Classifiers: Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming', url: 'https://arxiv.org/abs/2501.18837'}]},
       {topic: 'Debate and scalable oversight', papers: [
         {title: 'AI Safety via Debate', url: 'https://arxiv.org/abs/1805.00899'},
         {title: 'Debating with More Persuasive LLMs Leads to More Truthful Answers', url: 'https://arxiv.org/abs/2402.06782'}]}
