@@ -112,3 +112,7 @@ If only `repo` is set, the site displays the forum link without attempting to lo
 JavaScript syntax and rendering logic checked. All 15 supplied reading URLs were retrieved successfully with the web tool; arXiv links use HTTPS. The 2026 Constitutional Classifiers link resolves to Constitutional Classifiers++; it remains grouped with the associated 2025 paper under the supplied short title.
 
 Browser permission denied access to both the local preview and GitHub. Consequently desktop/mobile visual inspection, live giscus testing, and deployment could not be completed in this session. The CSS includes layouts for desktop, tablet, and small phones, but these remain visually unverified. Please preview before public circulation.
+
+## Acknowledgment
+
+The initial design and implementation of this website were developed with assistance from OpenAI’s ChatGPT (Codex). The organizers reviewed and maintain the website’s content.
