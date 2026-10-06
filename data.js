@@ -7,7 +7,7 @@ window.GROUP = {
   discussion: { repo: '', repoId: '', category: '', categoryId: '' },
   semesters: [{
     id: 'fall-2026', label: 'Fall 2026', theme: 'Interpretability & AI Safety',
-    scheduleNote: 'Future meetings: 1:00 PM–TBD ET. We will decide the usual end time and future schedule at our first meeting.',
+    scheduleNote: 'Future meetings: 1:00 PM – [TBD] ET. We will decide the usual end time and future schedule at our first meeting.',
     meetings: [{
       date: '2026-10-10', start: '13:00', end: '14:00', first: true,
       topic: 'Why Interpretability?',
@@ -15,7 +15,7 @@ window.GROUP = {
       notes: 'These readings are a starting point for discussing what interpretability research is trying to accomplish, why it might matter for AI safety, and some potential limitations of interpretability-based approaches.',
       leader: '', location: '', meetingUrl: '',
       readings: [
-        {title: 'The Urgency of Interpretability', author: 'Dario Amodei', url: 'https://darioamodei.com/post/the-urgency-of-interpretability'},
+        {title: 'The Urgency of Interpretability', url: 'https://darioamodei.com/post/the-urgency-of-interpretability'},
         {title: 'Interpretability Will Not Reliably Find Deceptive AI', url: 'https://www.alignmentforum.org/posts/PwnadG4BFjaER3MGf/interpretability-will-not-reliably-find-deceptive-ai'}
       ]
     }],

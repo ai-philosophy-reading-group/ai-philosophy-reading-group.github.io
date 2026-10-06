@@ -7,3 +7,16 @@
 .paper-title{text-decoration:underline;text-decoration-color:#b9c7d4;text-underline-offset:4px}
 nav a{padding:4px 0;display:inline-block}
 .meeting-date{display:block}.intro h1{max-width:760px}
+/* Review pass: let the heading wrap naturally and preserve reading space on tablets. */
+.intro h1{letter-spacing:-.025em;text-wrap:balance}
+nav{padding:4px 0}
+nav a{display:inline-flex;align-items:center;min-height:44px;font-size:.875rem}
+.reading-group h3{font-size:.875rem}
+.meeting-notes{line-height:1.65}
+@media (min-width:761px) and (max-width:960px){
+  .reading-group{grid-template-columns:1fr;gap:10px}
+}
+@media (max-width:600px){
+  .reading-group{grid-template-columns:1fr;gap:10px}
+  .intro h1{font-size:clamp(2rem,7.5vw,2.8rem)}
+}

@@ -5,7 +5,7 @@
   const el = (tag, cls, text) => { const n = document.createElement(tag); if(cls) n.className=cls; if(text) n.textContent=text; return n; };
   const link = (title,url,cls) => {const a=el('a',cls,title); if (/^(https?:\/\/|mailto:)/.test(url)) a.href=url; return a;};
   const time = value => {const [h,m]=value.split(':').map(Number);return `${h%12||12}:${String(m).padStart(2,'0')} ${h<12?'AM':'PM'}`;};
-  const range = m => !m.end ? `${time(m.start)}–TBD` : time(m.start).endsWith(time(m.end).slice(-2)) ? `${time(m.start).slice(0,-3)}–${time(m.end)}` : `${time(m.start)}–${time(m.end)}`;
+  const range = m => !m.end ? `${time(m.start)} – [TBD]` : time(m.start).endsWith(time(m.end).slice(-2)) ? `${time(m.start).slice(0,-3)}–${time(m.end)}` : `${time(m.start)}–${time(m.end)}`;
   const today = new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
   function render(id) {
     const semester = data.semesters.find(s=>s.id===id) || data.semesters.find(s=>s.id===data.currentSemester) || data.semesters[0];
