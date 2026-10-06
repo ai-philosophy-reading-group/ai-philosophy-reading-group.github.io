@@ -31,7 +31,7 @@ Copy this object into the appropriate semester's `meetings` array. Replace the e
 ```js
 {
   date: 'YYYY-MM-DD',
-  start: '13:00', end: '', // Eastern time, 24-hour format. Blank end displays 1:00 PM–.
+  start: '13:00', end: '', // Eastern time, 24-hour format. Blank end displays 1:00 PM–TBD.
   topic: 'Confirmed meeting topic',
   description: 'Short description of the session.',
   leader: '', // Optional: confirmed discussion leader
@@ -73,46 +73,23 @@ Empty optional fields do not appear. Affiliations describe individual organizers
 
 A semester can be linked directly using `?semester=fall-2026` after the site's URL. Links and styles use relative paths, so both organization homepages and repository Pages URLs work.
 
-## Enable GitHub Discussions and giscus
+## Discussion forum
 
-The temporary Discussion section is intentional. There are no fake buttons or invalid repository links.
+The website links directly to the repository's GitHub Discussions forum:
 
-1. In your public repository's **Settings → General → Features**, enable **Discussions**.
-2. Open the Discussions tab. For the embedded thread, create an **Announcements-format category**, e.g. `Website discussion`. This is the format recommended by giscus: visitors comment through the embed, and maintainers manage the category. You can keep the normal General category for ordinary forum threads.
-3. Optionally create Interpretability, AI Safety, Paper Discussions, Reading Suggestions, and Announcements categories later. The initial site does not require all of them.
-4. Visit https://giscus.app and follow its link to install the giscus GitHub app. Grant it access to this repository. An organization owner may need to approve installation.
-5. Enter `YOUR-ORG/YOUR-ORG.github.io` (or your actual owner/repository). Select the category created above. Choose **specific discussion title**, use `reading-group-general`, and enable strict matching.
-6. The generated script includes `data-repo`, `data-repo-id`, `data-category`, and `data-category-id`. Copy those four values into `data.js`:
+https://github.com/ai-philosophy-reading-group/ai-philosophy-reading-group.github.io/discussions
 
-```js
-discussion: {
-  repo: 'YOUR-ORG/YOUR-ORG.github.io',
-  repoId: 'value from data-repo-id',
-  category: 'Website discussion',
-  categoryId: 'value from data-category-id'
-},
-```
-
-7. Commit. `app.js` already creates the script in `<div id="giscus">`. Do not paste a second script. The stable mapping keeps one general conversation across semesters and avoids duplicate threads if the page URL changes.
-8. Test the published site: the forum link should open the repository's Discussions, and the embed should load. Visitors can read without an account; posting via giscus requires GitHub sign-in/authorization. Verify an actual comment from your own account before announcing the forum.
-
-If only `repo` is set, the site displays the forum link without attempting to load giscus. The remaining IDs must be real values from giscus. No secrets or tokens belong in these files.
+Forum categories are managed in the repository's Discussions settings. The website requires no forum configuration or credentials.
 
 ## File guide
 
-- `data.js`: meetings, reading pool, semesters, contacts, discussion configuration.
+- `data.js`: meetings, reading pool, semesters, and contacts.
 - `index.html`: page structure, introductory and About text.
 - `style.css`: typography, desktop/mobile layouts, print styles, keyboard focus.
-- `app.js`: rendering, date formatting, archive selector, optional giscus loading.
+- `app.js`: rendering, date formatting, and the archive selector.
 - `favicon.svg`: simple ampersand icon.
 - `.nojekyll`: tells Pages to serve the files as static assets.
 
-## Validation status — October 6, 2026
-
-JavaScript syntax and rendering logic checked. All 15 supplied reading URLs were retrieved successfully with the web tool; arXiv links use HTTPS. The 2026 Constitutional Classifiers link resolves to Constitutional Classifiers++; it remains grouped with the associated 2025 paper under the supplied short title.
-
-Browser permission denied access to both the local preview and GitHub. Consequently desktop/mobile visual inspection, live giscus testing, and deployment could not be completed in this session. The CSS includes layouts for desktop, tablet, and small phones, but these remain visually unverified. Please preview before public circulation.
-
 ## Acknowledgment
 
-The initial design and implementation of this website were developed with assistance from OpenAI’s ChatGPT (Codex). The organizers reviewed and maintain the website’s content.
+The initial design and implementation of this website were developed with assistance from OpenAI's ChatGPT (Codex). The organizers reviewed and maintain the website's content.

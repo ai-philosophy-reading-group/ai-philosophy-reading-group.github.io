@@ -39,8 +39,4 @@
   $('semester-select').addEventListener('change',e=>{render(e.target.value);const u=new URL(location.href);u.searchParams.set('semester',e.target.value);history.replaceState(null,'',u);});
   render(new URLSearchParams(location.search).get('semester')||data.currentSemester);
   if(data.organizers.length){$('organizers').replaceChildren();for(const o of data.organizers){const div=el('div','organizer');div.append(el('strong','',o.name));if(o.affiliation)div.append(el('p','muted',o.affiliation));if(o.email){const p=el('p');p.append(link(o.email,'mailto:'+o.email));div.append(p);}$('organizers').append(div);}}
-  // giscus loads only after real repository and category IDs are supplied.
-  const d=data.discussion;
-  if(d.repo){$('discussion-link').hidden=false;$('discussion-link').append(link('Open the discussion forum','https://github.com/'+d.repo+'/discussions'));$('discussion-placeholder').hidden=true;}
-  if(d.repo&&d.repoId&&d.category&&d.categoryId){const script=document.createElement('script');script.src='https://giscus.app/client.js';const attrs={'repo':d.repo,'repo-id':d.repoId,'category':d.category,'category-id':d.categoryId,'mapping':'specific','term':'reading-group-general','strict':'1','reactions-enabled':'1','emit-metadata':'0','input-position':'top','theme':'light','lang':'en','loading':'lazy'};for(const [k,v] of Object.entries(attrs))script.setAttribute('data-'+k,v);script.crossOrigin='anonymous';script.async=true;$('giscus').append(script);}
 })();

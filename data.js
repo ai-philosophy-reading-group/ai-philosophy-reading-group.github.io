@@ -4,7 +4,6 @@ window.GROUP = {
   currentSemester: 'fall-2026',
   // Replace with confirmed public contact details. Example in README.
   organizers: [],
-  discussion: { repo: '', repoId: '', category: '', categoryId: '' },
   semesters: [{
     id: 'fall-2026', label: 'Fall 2026', theme: 'Interpretability & AI Safety',
     scheduleNote: 'Future meetings: 1:00 PM – [TBD] ET. We will decide the usual end time and future schedule at our first meeting.',
