@@ -38,5 +38,5 @@
   $('semester-picker').hidden=data.semesters.length<2;
   $('semester-select').addEventListener('change',e=>{render(e.target.value);const u=new URL(location.href);u.searchParams.set('semester',e.target.value);history.replaceState(null,'',u);});
   render(new URLSearchParams(location.search).get('semester')||data.currentSemester);
-  if(data.organizers.length){$('organizers').replaceChildren();for(const o of data.organizers){const div=el('div','organizer');div.append(el('strong','',o.name));if(o.affiliation)div.append(el('p','muted',o.affiliation));if(o.email){const p=el('p');p.append(link(o.email,'mailto:'+o.email));div.append(p);}$('organizers').append(div);}}
+  if(data.organizers.length){$('organizers').replaceChildren();for(const o of data.organizers){const div=el('div','organizer');const name=el('strong');name.append(o.profile?link(o.name,o.profile):document.createTextNode(o.name));div.append(name);if(o.affiliation)div.append(el('p','muted',o.affiliation));$('organizers').append(div);}}
 })();

@@ -50,17 +50,17 @@ For the first meeting the confirmed start/end are `13:00` and `14:00`. Do not co
 
 The reading pool lives in `readingGroups`; each group has a `topic` and a `papers` array. A paper can have a `related` array for associated papers (see Constitutional Classifiers). Listing a paper does not schedule it. The order groups appear in the file is the display order, not a chronology of meetings.
 
-### Contact details
+### Organizers
 
-Replace `organizers: []` with confirmed public details, for example:
+Update the `organizers` array with public names, affiliations, and department profile links, for example:
 
 ```js
 organizers: [
-  { name: 'Confirmed name', affiliation: '', email: 'confirmed@example.org' }
+  { name: 'Confirmed name', affiliation: 'University name', profile: 'https://example.org/department/profile' }
 ],
 ```
 
-Empty optional fields do not appear. Affiliations describe individual organizers, not university sponsorship. No names or email addresses have been guessed.
+Each name links to its profile in the same tab; the university appears as plain text beneath it. Email addresses are not displayed. Affiliations describe individual organizers, not university sponsorship.
 
 ### Add a semester and archive the previous one
 

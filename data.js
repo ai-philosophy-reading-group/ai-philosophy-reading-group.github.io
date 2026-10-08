@@ -2,8 +2,11 @@
    Dates: YYYY-MM-DD. Times are Eastern. Empty optional fields are hidden. */
 window.GROUP = {
   currentSemester: 'fall-2026',
-  // Replace with confirmed public contact details. Example in README.
-  organizers: [],
+  // Public organizer names, affiliations, and department profile links.
+  organizers: [
+    { name: 'Ruiting Jiang', affiliation: 'University of Notre Dame', profile: 'https://philosophy.nd.edu/people/graduate-students/ruiting-jiang/' },
+    { name: 'Minzhe Li', affiliation: 'University of Pittsburgh', profile: 'https://www.philosophy.pitt.edu/people/ant-42' }
+  ],
   semesters: [{
     id: 'fall-2026', label: 'Fall 2026', theme: 'Interpretability & AI Safety',
     scheduleNote: 'Future meetings: 1:00 PM – [TBD] ET. We will decide the usual end time and future schedule at our first meeting.',
