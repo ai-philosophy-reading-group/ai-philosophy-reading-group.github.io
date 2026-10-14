@@ -9,7 +9,7 @@ window.GROUP = {
   ],
   semesters: [{
     id: 'fall-2026', label: 'Fall 2026', theme: 'Interpretability & AI Safety',
-    scheduleNote: 'Future meetings: 1:00 PM – [TBD] ET. We will decide the usual end time and future schedule at our first meeting.',
+    scheduleNote: '',
     meetings: [{
       date: '2026-10-10', start: '13:00', end: '14:00', first: true,
       topic: 'Why Interpretability?',
