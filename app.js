@@ -18,11 +18,12 @@
     const next=semester.id===data.currentSemester ? meetings.find(m=>m.date>=today) : null;
     for(const m of meetings){
       const card=el('article','meeting');
-      const statuses=[];if(m.first)statuses.push('First meeting');if(m===next)statuses.push(m.date===today?'Today':'Upcoming');
+      const statuses=[];if(m.first)statuses.push('First meeting');if(m.week!=null)statuses.push('Week '+m.week);if(m===next)statuses.push(m.date===today?'Today':'Upcoming');
       if(statuses.length)card.append(el('p','meeting-status',statuses.join(' · ')));
       const date=el('time','meeting-date',new Intl.DateTimeFormat('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(new Date(m.date+'T12:00:00Z')));date.dateTime=m.date;
       card.append(date,el('p','meeting-time',range(m)+' ET'),el('h3','',m.topic));
       if(m.leader) card.append(el('p','meeting-meta','Discussion leader: '+m.leader));
+      if(m.presenter) card.append(el('p','meeting-meta','Presenter: '+m.presenter));
       if(m.location)card.append(el('p','meeting-meta',m.location));
       if(m.meetingUrl){const p=el('p','meeting-meta');p.append(link('Join the meeting',m.meetingUrl));card.append(p);}
       if(m.description)card.append(el('p','meeting-description',m.description));

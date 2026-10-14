@@ -20,6 +20,13 @@ window.GROUP = {
         {title: 'The Urgency of Interpretability', url: 'https://darioamodei.com/post/the-urgency-of-interpretability'},
         {title: 'Interpretability Will Not Reliably Find Deceptive AI', url: 'https://www.alignmentforum.org/posts/PwnadG4BFjaER3MGf/interpretability-will-not-reliably-find-deceptive-ai'}
       ]
+    }, {
+      date: '2026-10-17', start: '13:00', end: '14:30', week: 1,
+      topic: 'The Linear Representation Hypothesis and the Geometry of Large Language Models',
+      presenter: 'TBD',
+      readings: [
+        {title: 'The Linear Representation Hypothesis and the Geometry of Large Language Models', url: 'http://arxiv.org/abs/2311.03658'}
+      ]
     }],
     readingGroups: [
       {topic: 'Representations and geometry', papers: [
