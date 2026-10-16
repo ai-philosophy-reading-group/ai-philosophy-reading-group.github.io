@@ -22,3 +22,21 @@ nav a{display:inline-flex;align-items:center;min-height:44px;font-size:.875rem}
   .reading-group{grid-template-columns:1fr;gap:10px}
   .intro h1{font-size:clamp(2rem,7.5vw,2.8rem)}
 }
+
+/* Expandable schedule: only the next meeting receives the highlight. */
+details.meeting{background:transparent;border-left-color:var(--rule);padding:0}
+details.meeting-upcoming{background:var(--light);border-left-color:var(--ink)}
+.meeting-summary{position:relative;display:block;cursor:pointer;padding:20px 52px 20px 26px;list-style:none}
+.meeting-summary::-webkit-details-marker{display:none}
+.meeting-summary::after{content:'+';position:absolute;right:22px;top:22px;font:1.4rem var(--sans);color:var(--ink)}
+.meeting[open]>.meeting-summary::after{content:'−'}
+.meeting-summary:focus-visible{outline:3px solid #bd7c27;outline-offset:3px}
+.meeting-summary h3{margin-bottom:0;overflow-wrap:anywhere}
+.meeting-summary .meeting-time{margin-bottom:10px}
+.meeting:not([open]) .meeting-summary h3{font-size:1.25rem;line-height:1.4}
+.meeting-content{padding:0 26px 23px}
+@media(max-width:480px){
+ .meeting-summary{padding:18px 42px 18px 17px}
+ .meeting-summary::after{right:15px;top:18px}
+ .meeting-content{padding:0 17px 18px}
+}

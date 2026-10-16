@@ -23,7 +23,7 @@ window.GROUP = {
     }, {
       date: '2026-10-17', start: '13:00', end: '14:30', week: 1,
       topic: 'The Linear Representation Hypothesis and the Geometry of Large Language Models',
-      presenter: 'TBD',
+      presenter: 'Minzhe Li',
       readings: [
         {title: 'The Linear Representation Hypothesis and the Geometry of Large Language Models', url: 'http://arxiv.org/abs/2311.03658'}
       ]
