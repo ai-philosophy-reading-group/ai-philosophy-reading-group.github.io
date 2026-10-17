@@ -6,7 +6,9 @@
   const link = (title,url,cls) => {const a=el('a',cls,title); if (/^(https?:\/\/|mailto:)/.test(url)) a.href=url; return a;};
   const time = value => {const [h,m]=value.split(':').map(Number);return `${h%12||12}:${String(m).padStart(2,'0')} ${h<12?'AM':'PM'}`;};
   const range = m => !m.end ? `${time(m.start)} – [TBD]` : time(m.start).endsWith(time(m.end).slice(-2)) ? `${time(m.start).slice(0,-3)}–${time(m.end)}` : `${time(m.start)}–${time(m.end)}`;
-  const today = new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  const now = new Date();
+  const easternTime = new Intl.DateTimeFormat('en-GB',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(now);
+  const today = new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
   function render(id) {
     const semester = data.semesters.find(s=>s.id===id) || data.semesters.find(s=>s.id===data.currentSemester) || data.semesters[0];
     $('semester-label').textContent=semester.label + (semester.id!==data.currentSemester?' · Archive':'');
@@ -15,7 +17,7 @@
     $('schedule-note').textContent=semester.scheduleNote || '';
     $('meetings').replaceChildren();
     const meetings=[...semester.meetings].sort((a,b)=>a.date.localeCompare(b.date));
-    const next=semester.id===data.currentSemester ? meetings.find(m=>m.date>=today) : null;
+    const next=semester.id===data.currentSemester ? meetings.find(m=>m.date>today || (m.date===today && (!m.end || easternTime<m.end))) : null;
     for(const m of meetings){
       const card=el('details','meeting'+(m===next?' meeting-upcoming':''));
       card.open=m===next;
@@ -32,6 +34,11 @@
       if(m.meetingUrl){const p=el('p','meeting-meta');p.append(link('Join the meeting',m.meetingUrl));content.append(p);}
       if(m.description)content.append(el('p','meeting-description',m.description));
       const ul=el('ul');for(const r of m.readings){const li=el('li');if(r.author)li.append(document.createTextNode(r.author+', '));li.append(link(r.title,r.url));ul.append(li);}content.append(ul);
+      if(m.handout && /^handout-[0-9-]+\.pdf$/.test(m.handout)){
+        const p=el('p','meeting-meta');
+        const a=el('a','','Download handout (PDF)');a.href=m.handout;a.download=m.handout;
+        p.append(a);content.append(p);
+      }
       if(m.notes)content.append(el('p','meeting-notes',m.notes));$('meetings').append(card);
     }
     if(!meetings.length)$('meetings').append(el('p','muted','Meeting dates will be announced here.'));

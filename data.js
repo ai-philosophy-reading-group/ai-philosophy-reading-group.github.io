@@ -13,6 +13,7 @@ window.GROUP = {
     meetings: [{
       date: '2026-10-10', start: '13:00', end: '14:00', first: true,
       topic: 'Why Interpretability?',
+      handout: 'handout-2026-10-10.pdf',
       description: 'The session will begin with a discussion of logistics and the format of the reading group, followed by an informal discussion of the two introductory readings.',
       notes: 'These readings are a starting point for discussing what interpretability research is trying to accomplish, why it might matter for AI safety, and some potential limitations of interpretability-based approaches.',
       leader: '', location: '', meetingUrl: '',
@@ -24,8 +25,16 @@ window.GROUP = {
       date: '2026-10-17', start: '13:00', end: '14:30', week: 1,
       topic: 'The Linear Representation Hypothesis and the Geometry of Large Language Models',
       presenter: 'Minzhe Li',
+      handout: 'handout-2026-10-17.pdf',
       readings: [
         {title: 'The Linear Representation Hypothesis and the Geometry of Large Language Models', url: 'http://arxiv.org/abs/2311.03658'}
+      ]
+    }, {
+      date: '2026-10-24', start: '13:00', end: '14:30', week: 2,
+      topic: 'Toy Models of Superposition',
+      presenter: 'TBD',
+      readings: [
+        {title: 'Toy Models of Superposition', url: 'https://arxiv.org/abs/2209.10652'}
       ]
     }],
     readingGroups: [
