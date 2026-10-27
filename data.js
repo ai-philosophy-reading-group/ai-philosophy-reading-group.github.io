@@ -32,9 +32,21 @@ window.GROUP = {
     }, {
       date: '2026-10-24', start: '13:00', end: '14:30', week: 2,
       topic: 'Toy Models of Superposition',
-      presenter: 'TBD',
+      presenter: 'Ruiting Jiang',
+      description: 'We discussed Sections 1–4 of Toy Models of Superposition.',
+      handout: 'handout-2026-10-24.pdf',
+      handoutLabel: 'Download slides (PDF)',
       readings: [
         {title: 'Toy Models of Superposition', url: 'https://arxiv.org/abs/2209.10652'}
+      ]
+    }, {
+      date: '2026-10-31', start: '13:00', end: '14:30', week: 3,
+      topic: 'Superposition and Sparse Autoencoders',
+      presenter: 'Minzhe Li and Ruiting Jiang',
+      description: 'Minzhe Li will present the remaining sections of Toy Models of Superposition. Ruiting Jiang will then present Sparse Autoencoders Find Highly Interpretable Features in Language Models.',
+      readings: [
+        {title: 'Toy Models of Superposition (remaining sections)', url: 'https://arxiv.org/abs/2209.10652'},
+        {title: 'Sparse Autoencoders Find Highly Interpretable Features in Language Models', url: 'https://arxiv.org/abs/2309.08600'}
       ]
     }],
     readingGroups: [

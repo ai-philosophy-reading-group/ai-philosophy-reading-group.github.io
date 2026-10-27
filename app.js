@@ -36,7 +36,7 @@
       const ul=el('ul');for(const r of m.readings){const li=el('li');if(r.author)li.append(document.createTextNode(r.author+', '));li.append(link(r.title,r.url));ul.append(li);}content.append(ul);
       if(m.handout && /^handout-[0-9-]+\.pdf$/.test(m.handout)){
         const p=el('p','meeting-meta');
-        const a=el('a','','Download handout (PDF)');a.href=m.handout;a.download=m.handout;
+        const a=el('a','',m.handoutLabel || 'Download handout (PDF)');a.href=m.handout;a.download=m.handout;
         p.append(a);content.append(p);
       }
       if(m.notes)content.append(el('p','meeting-notes',m.notes));$('meetings').append(card);
