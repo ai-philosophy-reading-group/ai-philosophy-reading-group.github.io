@@ -48,6 +48,13 @@ window.GROUP = {
         {title: 'Toy Models of Superposition (remaining sections)', url: 'https://arxiv.org/abs/2209.10652'},
         {title: 'Sparse Autoencoders Find Highly Interpretable Features in Language Models', url: 'https://arxiv.org/abs/2309.08600'}
       ]
+    }, {
+      date: '2026-11-07', start: '13:00', end: '14:30', week: 4,
+      topic: 'Scaling Monosemanticity',
+      presenter: 'Minzhe Li',
+      readings: [
+        {title: 'Scaling Monosemanticity', url: 'https://arxiv.org/abs/2605.29358'}
+      ]
     }],
     readingGroups: [
       {topic: 'Representations and geometry', papers: [
