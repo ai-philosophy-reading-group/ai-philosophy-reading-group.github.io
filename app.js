@@ -34,9 +34,11 @@
       if(m.meetingUrl){const p=el('p','meeting-meta');p.append(link('Join the meeting',m.meetingUrl));content.append(p);}
       if(m.description)content.append(el('p','meeting-description',m.description));
       const ul=el('ul');for(const r of m.readings){const li=el('li');if(r.author)li.append(document.createTextNode(r.author+', '));li.append(link(r.title,r.url));ul.append(li);}content.append(ul);
-      if(m.handout && /^handout-[0-9-]+\.pdf$/.test(m.handout)){
+      const handouts=m.handouts || (m.handout ? [{file:m.handout,title:m.handoutLabel || 'Download handout (PDF)'}] : []);
+      for(const h of handouts){
+        if(!/^[a-zA-Z0-9][a-zA-Z0-9._-]*\.pdf$/.test(h.file))continue;
         const p=el('p','meeting-meta');
-        const a=el('a','',m.handoutLabel || 'Download handout (PDF)');a.href=m.handout;a.download=m.handout;
+        const a=el('a','',h.title);a.href=h.file;a.download=h.file;
         p.append(a);content.append(p);
       }
       if(m.notes)content.append(el('p','meeting-notes',m.notes));$('meetings').append(card);

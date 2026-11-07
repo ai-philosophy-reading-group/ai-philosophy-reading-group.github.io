@@ -43,6 +43,10 @@ window.GROUP = {
       date: '2026-10-31', start: '13:00', end: '14:30', week: 3,
       topic: 'Superposition and Sparse Autoencoders',
       presenter: 'Minzhe Li and Ruiting Jiang',
+      handouts: [
+        {file: 'superposition-part-2-2026-10-31.pdf', title: 'Download Toy Models of Superposition — Part II (PDF)'},
+        {file: 'sae-slides-2026-10-31.pdf', title: 'Download Sparse Autoencoders slides (PDF)'}
+      ],
       description: 'Minzhe Li will present the remaining sections of Toy Models of Superposition. Ruiting Jiang will then present Sparse Autoencoders Find Highly Interpretable Features in Language Models.',
       readings: [
         {title: 'Toy Models of Superposition (remaining sections)', url: 'https://arxiv.org/abs/2209.10652'},
@@ -52,8 +56,18 @@ window.GROUP = {
       date: '2026-11-07', start: '13:00', end: '14:30', week: 4,
       topic: 'Scaling Monosemanticity',
       presenter: 'Minzhe Li',
+      handouts: [
+        {file: 'scaling-monosemanticity-2026-11-07.pdf', title: 'Download Scaling Monosemanticity materials (PDF)'}
+      ],
       readings: [
         {title: 'Scaling Monosemanticity', url: 'https://arxiv.org/abs/2605.29358'}
+      ]
+    }, {
+      date: '2026-11-14', start: '13:00', end: '14:30', week: 5,
+      topic: 'Steering Language Models With Activation Engineering',
+      presenter: 'Ruiting Jiang',
+      readings: [
+        {title: 'Steering Language Models With Activation Engineering', url: 'https://arxiv.org/abs/2308.10248'}
       ]
     }],
     readingGroups: [
